@@ -10,7 +10,7 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 		this.codigoConfigurador = codigoConfigurador;
 	}
 
-	
+	@Override
 	public boolean agregarUsuario(Usuario usuario, Alarma alarma) {
 		
 			if (alarma.listaUsuariosValidos.add(usuario)) {
@@ -18,16 +18,22 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 			} return false;
 	}
 	
-	public boolean agregarSensorAAlarma(Sensor sensor, Alarma alarma) {
+	@Override
+	public boolean agregarSensorAAlarma(Sensor sensor, Alarma alarma) throws SensorDuplicadoException { 
 		if (alarma.agregarSensor(sensor) ) {
 			return true;
-			} return false;
+			} throw new SensorDuplicadoException();
 	}
 	
-	public boolean activarSensor(int idSensor, int idAlarma, String codigoActivacion) {
-		
+	public boolean activarSensor(Integer idSensor, Alarma alarma, String codigoActivacion) {
+		for(Sensor sensores: alarma.listaDeSensores) {
+			if ( idSensor.equals(sensores.getId())) {
+				sensores.estado=true;
+			}
+		} return false;
 	}
 	
+	@Override
 	public boolean 	activarDesactivarAlarma(int idAlarma, String codigoActivacion, Usuario usuarioConfigurador) {
 		// solo con todos los sensores activados
 	}

@@ -7,6 +7,7 @@ public class UsuarioActivador extends Usuario implements Activable{
 		
 	}
 
+	@Override
 	public boolean activarDesactivarAlarma(Alarma alarma, String codigoActivacion) {
 		
 	}

@@ -1,6 +1,7 @@
 package parcial.alarma.fittipaldi;
 
 import java.util.ArrayList;
+import java.util.Set;
 import java.util.TreeSet;
 
 public class Alarma {
@@ -34,14 +35,14 @@ public class Alarma {
 		} return false;
 	}
 	
-	public boolean agregarSensor(Sensor sensor) {
+	public boolean agregarSensor(Sensor sensor) throws SensorDuplicadoException {
 		
 		for (Sensor sensores : listaDeSensores) {
 			if (!sensores.getId().equals(sensor.getId())) {
 					listaDeSensores.add(sensor) ;
 				return true;
 				} 
-		}return false;
+		} throw new SensorDuplicadoException();
 	}
 	
 	

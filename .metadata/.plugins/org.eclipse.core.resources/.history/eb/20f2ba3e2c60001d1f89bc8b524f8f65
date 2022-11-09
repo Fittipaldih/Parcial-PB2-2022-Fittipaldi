@@ -1,0 +1,9 @@
+package parcial.alarma.fittipaldi;
+
+public interface Configurable {
+
+	public boolean agregarUsuario();
+	public boolean agregarSensorAAlarma();
+	public boolean activarSensor();
+	public boolean 	activarDesactivarAlarma();
+}

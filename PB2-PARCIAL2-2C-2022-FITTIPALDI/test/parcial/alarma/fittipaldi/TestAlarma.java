@@ -39,8 +39,8 @@ public class TestAlarma {
 		
 	}
 	
-	@Test
-	public void alAgregarUnSensorDuplicadoEnUnaAlarmaSeLanceUnaSensorDuplicadoException() {
+	@Test (expected = SensorDuplicadoException.class)
+	public void alAgregarUnSensorDuplicadoEnUnaAlarmaSeLanceUnaSensorDuplicadoException() throws SensorDuplicadoException {
 		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
 		Central central = new Central ();
 		assertTrue (central.registrarAlarma(alarma));
@@ -50,13 +50,34 @@ public class TestAlarma {
 			
 		Sensor sensor = new Sensor(1, false);
 		Sensor sensor2 = new Sensor(1, false);
-		usuarioConfigurador.agregarSensorAAlarma(sensor);
-		usuarioConfigurador.agregarSensorAAlarma(sensor2);
+		
+		try {
+			assertTrue(((UsuarioConfigurador) usuarioConfigurador).agregarSensorAAlarma(sensor, alarma));
+			assertFalse (((UsuarioConfigurador) usuarioConfigurador).agregarSensorAAlarma(sensor2,alarma));
+		} catch (Exception SensorDuplicadoException) {
+			throw new SensorDuplicadoException();
+		}
 		
 	}
 	
 	@Test
-	public void queNoSePuedaActivarUnaAlarmaSiHayAlMenosUnSensorDesactivado() {
+	public void queNoSePuedaActivarUnaAlarmaSiHayAlMenosUnSensorDesactivado() throws SensorDuplicadoException {
+		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
+		Central central = new Central ();
+		assertTrue (central.registrarAlarma(alarma));
+		
+		Usuario usuarioActivador = new UsuarioActivador (1, "Hernan");
+		alarma.agregarUsuario(usuarioActivador);
+			
+		Sensor sensor = new Sensor(1, false);
+		Sensor sensor2 = new Sensor(2, true);
+		
+		alarma.agregarSensor(sensor);
+		alarma.agregarSensor(sensor2);
+		String codigoActivacion = "ACTIVACION";
+		assertFalse ( ((UsuarioActivador) usuarioActivador).activarDesactivarAlarma(alarma, codigoActivacion) );
+		
+		
 		
 	}
 
