@@ -1,0 +1,14 @@
+package parcial.alarma.fittipaldi;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestAlarma {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
