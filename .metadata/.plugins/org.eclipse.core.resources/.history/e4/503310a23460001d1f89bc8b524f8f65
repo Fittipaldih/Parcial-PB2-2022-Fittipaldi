@@ -15,8 +15,6 @@ public class TestAlarma {
 		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
 		Central central = new Central ();
 		assertTrue (central.registrarAlarma(alarma));
-		assertEquals ((Integer)1 , alarma.getId());
-		assertNotNull(alarma);
 		
 	}
 	
@@ -30,8 +28,6 @@ public class TestAlarma {
 		boolean sePudoAgregar = alarma.agregarUsuario(usuarioConfigurador);
 		
 		assertTrue(sePudoAgregar);
-		assertNotNull (central);
-		assertEquals ((Integer)1 , alarma.getId());
 	}
 	
 	@Test (expected = AlarmaIncorrectoException.class)
@@ -43,10 +39,8 @@ public class TestAlarma {
 		Usuario usuarioConfigurador = new UsuarioConfigurador (1, "Hernan", codigoConfigurador);
 		
 		if ( alarma.validarCodigoConfiguracion(codigoConfigurador)) {
-			assertNull(alarma.agregarUsuario(usuarioConfigurador));
+		alarma.agregarUsuario(usuarioConfigurador);
 		} else throw new AlarmaIncorrectoException();
-		
-		
 		
 	}
 	

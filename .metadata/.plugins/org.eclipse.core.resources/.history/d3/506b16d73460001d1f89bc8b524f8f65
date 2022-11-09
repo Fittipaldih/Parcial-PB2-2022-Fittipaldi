@@ -43,7 +43,7 @@ public class TestAlarma {
 		Usuario usuarioConfigurador = new UsuarioConfigurador (1, "Hernan", codigoConfigurador);
 		
 		if ( alarma.validarCodigoConfiguracion(codigoConfigurador)) {
-			assertNull(alarma.agregarUsuario(usuarioConfigurador));
+			assertFalse(alarma.agregarUsuario(usuarioConfigurador));
 		} else throw new AlarmaIncorrectoException();
 		
 		

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestAlarma" project="PB2-PARCIAL2-2C-2022-FITTIPALDI" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="parcial.alarma.fittipaldi.TestAlarma" time="0.009">
+    <testcase name="queSePuedaAgregarUnUsuarioConfiguradorAUnaAlarma" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.003"/>
+    <testcase name="queParaUnaAlarmaDeterminadaSePuedaObtenerUnaColeccionOrdenadaDeAccionEsDeTipoConfiguracionOrdenadasPorIdDeAccion" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.001"/>
+    <testcase name="alAgregarUnUsuarioAUnaAlarmaConCondigoDeConfiguracionDeAlarmaInvalidoSeLanceElCodigoAlarmaIncorrectoException" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.0"/>
+    <testcase name="queSePuedaRegistrarUnaAlarmaEnLaCentral" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.0"/>
+    <testcase name="alAgregarUnSensorDuplicadoEnUnaAlarmaSeLanceUnaSensorDuplicadoException" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.002"/>
+    <testcase name="queNoSePuedaActivarUnaAlarmaSiHayAlMenosUnSensorDesactivado" classname="parcial.alarma.fittipaldi.TestAlarma" time="0.003"/>
+  </testsuite>
+</testrun>

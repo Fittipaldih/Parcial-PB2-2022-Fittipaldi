@@ -44,62 +44,6 @@ public class Alarma {
 				} 
 		} throw new SensorDuplicadoException();
 	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getCodigoActivacion() {
-		return codigoActivacion;
-	}
-
-	public void setCodigoActivacion(String codigoActivacion) {
-		this.codigoActivacion = codigoActivacion;
-	}
-
-	public String getCodigoConfiguracion() {
-		return codigoConfiguracion;
-	}
-
-	public void setCodigoConfiguracion(String codigoConfiguracion) {
-		this.codigoConfiguracion = codigoConfiguracion;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public ArrayList<Usuario> getListaUsuariosValidos() {
-		return listaUsuariosValidos;
-	}
-
-	public void setListaUsuariosValidos(ArrayList<Usuario> listaUsuariosValidos) {
-		this.listaUsuariosValidos = listaUsuariosValidos;
-	}
-
-	public Set<Accion> getListaDeAcciones() {
-		return listaDeAcciones;
-	}
-
-	public void setListaDeAcciones(Set<Accion> listaDeAcciones) {
-		this.listaDeAcciones = listaDeAcciones;
-	}
-
-	public Set<Sensor> getListaDeSensores() {
-		return listaDeSensores;
-	}
-
-	public void setListaDeSensores(Set<Sensor> listaDeSensores) {
-		this.listaDeSensores = listaDeSensores;
-	}
 	
 	
 	
