@@ -7,6 +7,6 @@ public class Alarma {
 	protected String codigoActivacion, codigoConfiguracion, nombre;
 	protected ArrayList <Usuario> listaUsuariosValidos;
 	protected ArrayList <Accion> listaDeAcciones;
-	protected ArrayList <Sensor> listaDeSensores;
+	
 	
 }

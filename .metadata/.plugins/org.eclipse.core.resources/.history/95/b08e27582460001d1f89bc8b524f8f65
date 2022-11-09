@@ -1,0 +1,24 @@
+package parcial.alarma.fittipaldi;
+
+public class UsuarioAdministrador extends Usuario{
+	
+	
+	public void agregarAlarma(Alarma alarma) {
+		
+	}
+	
+	public void agregarUsuario(Usuario usuario) {
+		
+	}
+	
+	public void agregarUsuarioAUnaAlarma (int dniUsuarioAAgregar, int idAlarma, String codigoConfiguracionAlarma) {
+		
+	}
+	
+	public void agregarSensorAAlarma(int idAlarma, String codigoConfiguracion, Sensor sensor, int idUsuarioConfigurador) {
+		
+	}
+	
+	
+
+}

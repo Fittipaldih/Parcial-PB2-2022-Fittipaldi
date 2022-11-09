@@ -1,0 +1,5 @@
+package parcial.alarma.fittipaldi;
+
+public class UsuarioConfigurador extends Usuario implements Configurable{
+
+}
