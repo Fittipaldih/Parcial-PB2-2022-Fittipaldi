@@ -14,6 +14,8 @@ public class UsuarioActivador extends Usuario implements Activable{
 				Accion accion = new Accion (1, alarma, null, "09.11.22", TipoOperacion.ACTIVACION);
 				alarma.listaDeAcciones.add(accion);
 				return true;
+				
+				
 			}	
 		} throw new SensorDesactivadoException();
 	}

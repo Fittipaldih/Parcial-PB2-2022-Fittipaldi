@@ -1,5 +1,6 @@
 package parcial.alarma.fittipaldi;
 
+import java.util.Objects;
 
 public class Sensor {
 	protected Integer id;

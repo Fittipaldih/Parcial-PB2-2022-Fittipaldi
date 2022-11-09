@@ -24,7 +24,6 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 	@Override
 	public boolean agregarSensorAAlarma(Sensor sensor, Alarma alarma) throws SensorDuplicadoException { 
 		if (alarma.agregarSensor(sensor) ) {
-			
 			return true;
 			} throw new SensorDuplicadoException();
 	}

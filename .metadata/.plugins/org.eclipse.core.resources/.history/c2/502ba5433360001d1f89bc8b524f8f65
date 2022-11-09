@@ -14,17 +14,15 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 	public boolean agregarUsuario(Usuario usuario, Alarma alarma) {
 		
 			if (alarma.listaUsuariosValidos.add(usuario)) {
-			
-			Accion accion= new Accion(2, alarma, usuario, "09/11-22", TipoOperacion.CONFIGURACION);
-			alarma.listaDeAcciones.add(accion);
 			return true;
+			Accion accion= new Accion(1, alarma, usuario, "09/11-22", TipoOperacion.CONFIGURACION);
+			alarma.listaDeAcciones.add(accion);
 			} return false;
 	}
 	
 	@Override
 	public boolean agregarSensorAAlarma(Sensor sensor, Alarma alarma) throws SensorDuplicadoException { 
 		if (alarma.agregarSensor(sensor) ) {
-			
 			return true;
 			} throw new SensorDuplicadoException();
 	}
