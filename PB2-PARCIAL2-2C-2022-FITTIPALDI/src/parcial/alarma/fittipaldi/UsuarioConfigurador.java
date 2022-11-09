@@ -3,25 +3,25 @@ package parcial.alarma.fittipaldi;
 public class UsuarioConfigurador extends Usuario implements Configurable{
 	
 	
-	public UsuarioConfigurador(Integer dni, String nombre) {
+	protected String codigoConfigurador;
+
+	public UsuarioConfigurador(Integer dni, String nombre, String codigoConfigurador) {
 		super(dni, nombre);
-		
+		this.codigoConfigurador = codigoConfigurador;
 	}
 
-	public boolean agregarAlarma(Alarma alarma) {
+	
+	public boolean agregarUsuario(Usuario usuario, Alarma alarma) {
 		
+			if (alarma.listaUsuariosValidos.add(usuario)) {
+			return true;
+			} return false;
 	}
 	
-	public boolean agregarUsuario(Usuario usuario) {
-		
-	}
-	
-	public void agregarUsuarioAUnaAlarma (int dniUsuarioAAgregar, int idAlarma, String codigoConfiguracionAlarma) {
-		
-	}
-	
-	public boolean agregarSensorAAlarma(int idAlarma, String codigoConfiguracion, Sensor sensor, int idUsuarioConfigurador) {
-		
+	public boolean agregarSensorAAlarma(Sensor sensor, Alarma alarma) {
+		if (alarma.agregarSensor(sensor) ) {
+			return true;
+			} return false;
 	}
 	
 	public boolean activarSensor(int idSensor, int idAlarma, String codigoActivacion) {
@@ -30,6 +30,12 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 	
 	public boolean 	activarDesactivarAlarma(int idAlarma, String codigoActivacion, Usuario usuarioConfigurador) {
 		// solo con todos los sensores activados
+	}
+
+	@Override
+	public boolean agregarAlarma(Alarma alarma) {
+		
+		return false;
 	}
 
 }

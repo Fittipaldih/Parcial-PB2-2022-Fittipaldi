@@ -1,0 +1,13 @@
+package parcial.alarma.fittipaldi;
+
+public class Sensor {
+	protected Integer id;
+	protected Boolean estado;
+	
+	public Sensor(Integer id, Boolean estado) {
+		
+		this.id = id;
+		this.estado = estado;
+	}
+	
+}

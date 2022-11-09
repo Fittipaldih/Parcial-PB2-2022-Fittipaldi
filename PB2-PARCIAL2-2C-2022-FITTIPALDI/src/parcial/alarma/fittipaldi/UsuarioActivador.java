@@ -11,4 +11,10 @@ public class UsuarioActivador extends Usuario implements Activable{
 		
 	}
 	
+	@Override
+	public boolean agregarAlarma(Alarma alarma, Central central) {
+		
+		return false;
+	}
+	
 }

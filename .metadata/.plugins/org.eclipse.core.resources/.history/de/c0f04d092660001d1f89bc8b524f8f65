@@ -1,0 +1,18 @@
+package parcial.alarma.fittipaldi;
+
+import java.util.ArrayList;
+
+public class Central {
+
+	protected ArrayList <Accion> listaDeAlarmas;
+	
+	public Central(Alarma alarma) {
+		listaDeAlarmas = new ArrayList <>();
+		listaDeAlarmas.add(alarma);
+	}
+	
+	public boolean registrarAlarma() {
+		
+	}
+		
+}

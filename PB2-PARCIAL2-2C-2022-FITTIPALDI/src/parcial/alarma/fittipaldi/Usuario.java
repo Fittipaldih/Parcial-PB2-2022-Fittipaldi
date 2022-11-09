@@ -1,6 +1,6 @@
 package parcial.alarma.fittipaldi;
 
-public class Usuario {
+public abstract class Usuario {
 	private Integer dni;
 	private String nombre;
 	
@@ -10,7 +10,7 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 	
-	
+	public abstract boolean agregarAlarma(Alarma alarma);
 	
 	
 }
