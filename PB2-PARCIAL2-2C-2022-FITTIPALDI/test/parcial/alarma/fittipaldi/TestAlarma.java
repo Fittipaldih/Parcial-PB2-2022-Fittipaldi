@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.junit.Test;
 
@@ -92,9 +94,10 @@ public class TestAlarma {
 		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
 		Central central = new Central ();
 		
+		Set <Accion> accionesOrdenadas = new TreeSet <>();
 		for (Accion acciones : alarma.listaDeAcciones) {
 			if ( acciones.getTipo().equals(TipoOperacion.CONFIGURACION)) {
-				Collections.sort((List<Accion>) acciones);
+				accionesOrdenadas.add(acciones);
 			}
 		}
 		

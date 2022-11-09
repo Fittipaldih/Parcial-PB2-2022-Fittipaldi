@@ -1,15 +1,14 @@
 package parcial.alarma.fittipaldi;
 
 public class Accion implements Comparable<Accion>{
-	protected Integer id;
+	protected int id;
 	protected Alarma alarmaARealizarAccion;
 	protected Usuario usuarioQueRealizaAccion;
 	protected String fechaDeAccion;
 	protected TipoOperacion tipo;
 	
-	public Accion(Integer id, Alarma alarmaARealizarAccion, Usuario usuarioQueRealizaAccion, String fechaDeAccion,
-			TipoOperacion tipo) {
-		super();
+	public Accion(int id, Alarma alarmaARealizarAccion, Usuario usuarioQueRealizaAccion, 
+					String fechaDeAccion,TipoOperacion tipo) {
 		this.id = id;
 		this.alarmaARealizarAccion = alarmaARealizarAccion;
 		this.usuarioQueRealizaAccion = usuarioQueRealizaAccion;

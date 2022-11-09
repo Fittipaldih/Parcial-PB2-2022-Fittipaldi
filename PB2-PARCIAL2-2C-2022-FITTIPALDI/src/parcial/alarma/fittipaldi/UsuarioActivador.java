@@ -12,14 +12,11 @@ public class UsuarioActivador extends Usuario implements Activable{
 		for (Sensor sensores : alarma.listaDeSensores) {
 			if ( sensores.getEstado() == true) {
 				return true;
+				Accion accion = new Accion (1, alarma, null, "09/11/22", TipoOperacion.ACTIVACION);
+				alarma.listaDeAcciones.add(accion);
 			}	
 		} throw new SensorDesactivadoException();
 	}
 	
-	@Override
-	public boolean agregarAlarma(Alarma alarma, Central central) {
-		
-		return false;
-	}
 	
 }

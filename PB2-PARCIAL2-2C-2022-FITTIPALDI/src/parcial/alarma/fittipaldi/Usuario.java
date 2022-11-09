@@ -10,7 +10,4 @@ public abstract class Usuario {
 		this.nombre = nombre;
 	}
 	
-	public abstract boolean agregarAlarma(Alarma alarma, Central central);
-	
-	
 }
