@@ -8,8 +8,12 @@ public class UsuarioActivador extends Usuario implements Activable{
 	}
 
 	@Override
-	public boolean activarDesactivarAlarma(Alarma alarma, String codigoActivacion) {
-		
+	public boolean activarDesactivarAlarma(Alarma alarma, String codigoActivacion) throws SensorDesactivadoException {
+		for (Sensor sensores : alarma.listaDeSensores) {
+			if ( sensores.getEstado() == true) {
+				return true;
+			}	
+		} throw new SensorDesactivadoException();
 	}
 	
 	@Override

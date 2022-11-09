@@ -2,6 +2,10 @@ package parcial.alarma.fittipaldi;
 
 import static org.junit.Assert.*;
 
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import org.junit.Test;
 
 public class TestAlarma {
@@ -11,6 +15,7 @@ public class TestAlarma {
 		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
 		Central central = new Central ();
 		assertTrue (central.registrarAlarma(alarma));
+		
 	}
 	
 	@Test
@@ -60,7 +65,7 @@ public class TestAlarma {
 		
 	}
 	
-	@Test
+	@Test ( expected = SensorDuplicadoException.class)
 	public void queNoSePuedaActivarUnaAlarmaSiHayAlMenosUnSensorDesactivado() throws SensorDuplicadoException {
 		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
 		Central central = new Central ();
@@ -69,20 +74,30 @@ public class TestAlarma {
 		Usuario usuarioActivador = new UsuarioActivador (1, "Hernan");
 		alarma.agregarUsuario(usuarioActivador);
 			
-		Sensor sensor = new Sensor(1, false);
-		Sensor sensor2 = new Sensor(2, true);
+		Sensor sensor = new Sensor(5, false);
 		
 		alarma.agregarSensor(sensor);
-		alarma.agregarSensor(sensor2);
+		
 		String codigoActivacion = "ACTIVACION";
+		try {
 		assertFalse ( ((UsuarioActivador) usuarioActivador).activarDesactivarAlarma(alarma, codigoActivacion) );
-		
-		
+		} catch (Exception SensorDesactivadoException) {
+			throw new SensorDuplicadoException();
+		}
 		
 	}
 
 	@Test
 	public void queParaUnaAlarmaDeterminadaSePuedaObtenerUnaColeccionOrdenadaDeAccionEsDeTipoConfiguracionOrdenadasPorIdDeAccion() {
+		Alarma alarma = new Alarma(1, "ACTIVACION", "CONFIGURACION", "ALARMA-UNLAM");
+		Central central = new Central ();
+		
+		for (Accion acciones : alarma.listaDeAcciones) {
+			if ( acciones.getTipo().equals(TipoOperacion.CONFIGURACION)) {
+				Collections.sort((List<Accion>) acciones);
+			}
+		}
+		
 		
 	}
 }

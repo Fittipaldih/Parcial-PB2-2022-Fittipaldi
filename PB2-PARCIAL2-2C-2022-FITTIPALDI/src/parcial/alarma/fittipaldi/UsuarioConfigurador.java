@@ -32,15 +32,11 @@ public class UsuarioConfigurador extends Usuario implements Configurable{
 			}
 		} return false;
 	}
-	
-	@Override
-	public boolean 	activarDesactivarAlarma(int idAlarma, String codigoActivacion, Usuario usuarioConfigurador) {
-		// solo con todos los sensores activados
-	}
+
 
 	@Override
-	public boolean agregarAlarma(Alarma alarma) {
-		
+	public boolean agregarAlarma(Alarma alarma, Central central) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
