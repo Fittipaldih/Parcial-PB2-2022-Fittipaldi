@@ -1,9 +1,9 @@
 package parcial.alarma.fittipaldi;
 
-public class UsuarioConfigurador extends Usuario implements Configurable{
+public class UsuarioAdministrador extends Usuario implements Configurable{
 	
 	
-	public UsuarioConfigurador(Integer dni, String nombre) {
+	public UsuarioAdministrador(Integer dni, String nombre) {
 		super(dni, nombre);
 		
 	}
